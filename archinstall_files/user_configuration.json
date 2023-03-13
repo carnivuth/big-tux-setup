@@ -1,0 +1,34 @@
+{
+    "archinstall-language": "Italian",
+    "audio": "pipewire",
+    "bootloader": "grub-install",
+    "config_version": "2.5.1",
+    "debug": false,
+    "hostname": "ice-braker",
+    "keyboard-layout": "it",
+    "mirror-region": {
+        "Italy": {
+            "http://archlinux.mirror.garr.it/archlinux/$repo/os/$arch": true,
+            "https://archmirror.it/repos/$repo/os/$arch": true
+        }
+    },
+    "nic": {
+        "dhcp": true,
+        "dns": null,
+        "gateway": null,
+        "iface": null,
+        "ip": null,
+        "type": "nm"
+    },
+    "no_pkg_lookups": false,
+    "offline": false,
+    "profile": {
+        "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
+    },
+    "script": "guided",
+    "silent": false,
+    "sys-encoding": "UTF-8",
+    "sys-language": "it_IT",
+    "timezone": "Europe/Rome",
+    "version": "2.5.1"
+}
