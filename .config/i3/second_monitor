@@ -1,0 +1,4 @@
+#!/bin/bash
+[[ $(( $(xrandr |grep -c connected)-$(xrandr  | grep -c  disconnected) )) -eq 2 ]] && xrandr  --auto --output HDMI-1-0 --right-of eDP-1  --mode 1920x1080 --rate  144
+
+
