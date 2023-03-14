@@ -10,6 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+
+#setup script folder
 ################################### BACKUPS OLD CONFIG #################
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -69,11 +71,6 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ograve move right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -90,7 +87,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -132,31 +129,29 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9; workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10; workspace number $ws10
 # switch workspaces
-bindsym $mod+control+Right workspace next
-bindsym $mod+control+Left workspace prev
+bindsym $mod+Mod1+Right workspace next
+bindsym $mod+mod1+Left workspace prev
 #move window to next/previous container
-bindsym $mod+control+Mod1+Right move window to workspace next
-bindsym $mod+control+Mod1+Left move window to workspace  prev
+bindsym $mod+control+Mod1+Right move window to workspace next; workspace next 
+bindsym $mod+control+Mod1+Left move window to workspace  prev; workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 bindsym $mod+Shift+e exec ~/.config/rofi/powermenu/type-4/powermenu.sh
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -179,8 +174,8 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessDown exec  brightnessctl -d intel_backlight s 10%- 
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10% 
 
-
-exec ~/.config/i3/second_monitor
+#second monitor setup
+exec second_monitor
 #start polybar
 exec_always  ~/.config/polybar/forest/launch.sh 
 #exec_always --no-startup-id  "sleep 1; ~/.config/i3/start_polybar" 
@@ -218,10 +213,12 @@ set $i3l spiral to workspace $ws10
 
 # keybinding to lock screen
 bindsym $mod+l exec "dm-tool lock "
-
-
+#start dunst
+exec_always --no-startup-id "killall dunst"
+exec_always --no-startup-id dunst
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+s exec suspend.sh

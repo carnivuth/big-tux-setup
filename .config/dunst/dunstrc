@@ -250,7 +250,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 4
+    corner_radius = 10
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -456,3 +456,7 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+# sound effect
+[play_sound]
+    summary = "*"
+    script = ~/scripts/system/alert.sh

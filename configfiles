@@ -1,0 +1,8 @@
+/home/matteo/.config/i3 .config/
+/home/matteo/.config/dunst .config/
+/home/matteo/.config/polybar .config/
+/home/matteo/.config/rofi .config/
+/home/matteo/.config/picom .config/
+/home/matteo/.profile ./arch_home/
+/home/matteo/.bashrc ./arch_home/
+/home/matteo/scripts/system ./arch_home/scripts/
