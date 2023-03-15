@@ -3,8 +3,7 @@ bluetooth_print() {
     bluetoothctl | while read -r; do
     if [ "$(systemctl is-active "bluetooth.service")" = "active" ] &&[ "$(bluetoothctl show|grep -o "Powered: yes")" = "Powered: yes" ]; then
 
-            printf 'bt on'
-
+            printf  "\uf293"
             devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
             counter=0
 
@@ -26,7 +25,8 @@ bluetooth_print() {
 
             printf '\n'
         else
-            echo "bt off"
+            
+            printf "bt off"
         fi
     done
 }
@@ -34,7 +34,6 @@ bluetooth_print() {
 bluetooth_toggle() {
     if bluetoothctl show | grep -q "Powered: no"; then
 	bluetoothctl power on >> /dev/null
-        printf  "bt on"
         sleep 1
 
         printf  "search\.\.\."
@@ -49,7 +48,6 @@ bluetooth_toggle() {
         done
 
         bluetoothctl power off >> /dev/null
-	echo "bt off"
     fi
 }
 

@@ -1,15 +1,17 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/env bash 
 # Add this script to your wm startup file.
 
 DIR="$HOME/.config/polybar/carnibar"
 
 # Terminate already running bar instances
-killall -q polybar
+#killall -q polybar
+kill -9 $(pgrep -x 'polybar') >/dev/null 2>&1
 
 # Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+#while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar -q main -c "$DIR"/config.ini &
-polybar -q secondary -c "$DIR"/config.ini &
+xrandr |grep " connected" | cut -d ' ' -f 1 | while read m; do 
+    export MONITOR="$m"
+    polybar -q  main -c /home/matteo/.config/polybar/carnibar/config.ini & 
+done

@@ -11,15 +11,7 @@
 
 set $mod Mod4
 
-#setup script folder
-################################### BACKUPS OLD CONFIG #################
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#       status_command i3status
-#}
-#######################################################################
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
@@ -43,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- "dm-tool lock" --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 #second screen setup
-exec ~/.config/i3/second_monitor
+exec "autodetect_monitor && ~/.fehbg && ~/.config/polybar/carnibar/launch.sh"
 #control audio with pamixer
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
@@ -54,8 +46,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
-#start logseq
-#bindsym $mod+l exec ~/applications/logseq/logseq
 
 # kill focused window
 bindsym $mod+q kill
@@ -174,25 +164,15 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessDown exec  brightnessctl -d intel_backlight s 10%- 
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10% 
 
-#second monitor setup
-exec second_monitor
 #start polybar
-#exec_always  .config/polybar/forest/launch.sh
-#exec_always --no-startup-id  "sleep 1; ~/.config/i3/start_polybar" 
+#exec_always  .config/polybar/carnibar/launch.sh
 #set background image
- exec_always --no-startup-id  "sleep 1;~/.fehbg"
+# exec_always --no-startup-id  "sleep 1;~/.fehbg"
 #remove window titlebar
 default_border pixel 0
 #window gaps settings
 set $gaps_value 12
-#gaps bottom $gaps_value
-#gaps left $gaps_value
-#gaps right $gaps_value
 gaps inner $gaps_value
-#gaps outer $gaps_value
-#gaps top $gaps_value
-#gaps horizontal $gaps_value
-#gaps vertical $gaps_value
 #start picom  compositor
 exec_always picom  --config ~/.config/picom/picom.conf &
 #setup tap to click touchpad
@@ -208,8 +188,6 @@ set $i3l spiral to workspace $ws7
 set $i3l spiral to workspace $ws8
 set $i3l spiral to workspace $ws9
 set $i3l spiral to workspace $ws10
-#enable blue borders
-#for_window [class="^.*"] border pixel 1
 
 # keybinding to lock screen
 bindsym $mod+l exec "dm-tool lock "
