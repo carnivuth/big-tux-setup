@@ -10,7 +10,7 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run";
-    show-icons:                 false;
+    show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
@@ -57,6 +57,7 @@ window {
     anchor:                      north;
     fullscreen:                  false;
     width:                       100%;
+    /*height:                       40px;*/
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -106,7 +107,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     margin:                      0px;
     padding:                     8px;

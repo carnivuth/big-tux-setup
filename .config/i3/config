@@ -177,7 +177,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10%
 #second monitor setup
 exec second_monitor
 #start polybar
-exec_always  ~/.config/polybar/forest/launch.sh 
+#exec_always  .config/polybar/forest/launch.sh
 #exec_always --no-startup-id  "sleep 1; ~/.config/i3/start_polybar" 
 #set background image
  exec_always --no-startup-id  "sleep 1;~/.fehbg"
@@ -225,3 +225,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+s exec suspend.sh
 #turn of bluetooth at startup
 exec_always btoff.sh
+
+#launch network manager
+bindsym $mod+n exec networkmanager_dmenu
+
+#screenshot 
+bindsym $mod+Print exec flameshot screen

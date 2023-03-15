@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "$@" > /home/matteo/alertoutput
+echo "$@" >> /var/log/notifications
 [[ "$1" != "" ]] && paplay --volume=1 ~/scripts/system/notification.wav 
