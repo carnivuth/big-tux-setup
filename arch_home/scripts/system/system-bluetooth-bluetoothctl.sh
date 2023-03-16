@@ -1,9 +1,10 @@
 #!/bin/bash
 bluetooth_print() {
     bluetoothctl | while read -r; do
+    echo "run script" >> ~/bt-script
     if [ "$(systemctl is-active "bluetooth.service")" = "active" ] &&[ "$(bluetoothctl show|grep -o "Powered: yes")" = "Powered: yes" ]; then
 
-            printf  "\uf293"
+            printf  'bt on'
             devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
             counter=0
 
@@ -23,10 +24,10 @@ bluetooth_print() {
                 fi
             done
 
-            printf '\n'
+            
         else
             
-            printf "bt off"
+            printf 'bt off'
         fi
     done
 }

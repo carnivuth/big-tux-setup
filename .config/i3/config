@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- "dm-tool lock" --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 #second screen setup
-exec "autodetect_monitor && ~/.fehbg && ~/.config/polybar/carnibar/launch.sh"
+exec autodetect_monitor 
 #control audio with pamixer
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
@@ -51,7 +51,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launcher.sh
 
 #change focus
 # alternatively, you can use the cursor keys:
@@ -165,9 +165,9 @@ bindsym XF86MonBrightnessDown exec  brightnessctl -d intel_backlight s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10% 
 
 #start polybar
-#exec_always  .config/polybar/carnibar/launch.sh
+exec_always  .config/polybar/carnibar/launch.sh
 #set background image
-# exec_always --no-startup-id  "sleep 1;~/.fehbg"
+exec_always --no-startup-id  "sleep 1;~/.fehbg"
 #remove window titlebar
 default_border pixel 0
 #window gaps settings
@@ -209,3 +209,5 @@ bindsym $mod+n exec networkmanager_dmenu
 
 #screenshot 
 bindsym $mod+Print exec flameshot screen
+#launch telegram 
+bindsym $mod+t exec telegram-desktop
