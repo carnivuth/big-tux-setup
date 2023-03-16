@@ -211,3 +211,5 @@ bindsym $mod+n exec networkmanager_dmenu
 bindsym $mod+Print exec flameshot screen
 #launch telegram 
 bindsym $mod+t exec telegram-desktop
+#launch powermenu
+bindsym $mod+p exec ~/.config/rofi/powermenu/carnipowermenu/powermenu.sh
