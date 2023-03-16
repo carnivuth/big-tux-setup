@@ -89,7 +89,7 @@ horibox {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
-    children:                    [ "prompt", "textbox-prompt-colon","entry", "listview" ];
+    children:                    ["textbox-prompt-colon",  "entry", "listview" ];
 }
 
 /*****----- Main Box -----*****/
@@ -103,6 +103,7 @@ mainbox {
     border-color:                @border-colour;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+    oont: "Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular";
 }
 
 /*****----- Inputbar -----*****/
@@ -127,9 +128,9 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     7px 0px 10px 0px;
+    padding:                     7px 0px 10px 10px;
     expand:                      false;
-    str:                         "::";
+    str:                         "";
     background-color:            inherit;
     text-color:                  inherit;
 }
@@ -141,7 +142,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "search...";
+    placeholder:                 "...";
     placeholder-color:           inherit;
 }
 num-filtered-rows {
