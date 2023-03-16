@@ -207,8 +207,11 @@ exec_always btoff.sh
 #launch network manager
 bindsym $mod+n exec networkmanager_dmenu
 
+
 #screenshot 
 bindsym $mod+Print exec flameshot screen
+#manual screenshot 
+bindsym $mod+Shift+Print exec flameshot gui
 #launch telegram 
 bindsym $mod+t exec telegram-desktop
 #launch powermenu
