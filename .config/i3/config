@@ -18,7 +18,11 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 13
+#font pango:DejaVu Sans Mono 13
+#font Hack:style=Italic
+#font Hack:style=Bold
+#font Hack:style=Bold Italic
+font Hack:style=Regular 13
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -29,13 +33,14 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- "dm-tool lock" --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- 'dm-tool lock' --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 #second screen setup
-exec autodetect_monitor 
+exec_always autorandr -c
+#exec autodetect_monitor 
 #control audio with pamixer
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
@@ -78,7 +83,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -140,7 +145,6 @@ bindsym $mod+control+Mod1+Left move window to workspace  prev; workspace prev
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec ~/.config/rofi/powermenu/type-4/powermenu.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -211,7 +215,7 @@ bindsym $mod+n exec networkmanager_dmenu
 #screenshot 
 bindsym $mod+Print exec flameshot screen
 #manual screenshot 
-bindsym $mod+Shift+Print exec flameshot gui
+bindsym $mod+Shift+Print exec flameshot gui &
 #launch telegram 
 bindsym $mod+t exec telegram-desktop
 #launch powermenu

@@ -10,8 +10,8 @@
 ## style-1   style-2   style-3   style-4   style-5
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/carnipowermenu"
-theme='style-5'
+dir="$HOME/.config/rofi/launchers/carnilauncher"
+theme='style-10'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
