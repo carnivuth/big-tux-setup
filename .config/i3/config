@@ -23,6 +23,7 @@ set $mod Mod4
 #font Hack:style=Bold
 #font Hack:style=Bold Italic
 font Hack:style=Regular 13
+for_window [class="^.*"] border pixel 0
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -33,14 +34,11 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- 'dm-tool lock' --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- 'dm-tool lock' --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-#second screen setup
-exec_always autorandr -c
-#exec autodetect_monitor 
 #control audio with pamixer
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
@@ -171,7 +169,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10%
 #start polybar
 exec_always  .config/polybar/carnibar/launch.sh
 #set background image
-exec_always --no-startup-id  "sleep 1;~/.fehbg"
+exec_always --no-startup-id  "~/.fehbg"
 #remove window titlebar
 default_border pixel 0
 #window gaps settings
@@ -206,7 +204,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #suspend key binding
 bindsym $mod+s exec suspend.sh
 #turn of bluetooth at startup
-exec_always btoff.sh
+#exec_always btoff.sh
 
 #launch network manager
 bindsym $mod+n exec networkmanager_dmenu

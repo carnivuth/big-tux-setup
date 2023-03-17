@@ -11,7 +11,7 @@ RESET="\[$(tput sgr0)\]"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
+alias lessssgoooooooooooooooooooooooo='sudo pacman -Syu'
 alias pacman='pacman --color=auto'
 #alias 'sudo pacman'='pacman --color=auto'
 alias yay='yay --color=auto'
@@ -24,6 +24,7 @@ export PATH="$PATH:/home/matteo/scripts"
 export PATH="$PATH:/home/matteo/scripts/system"
 export PATH="$PATH:/home/matteo/.local/bin"
 export PATH="$PATH:/home/matteo/applications/logseq"
+
 PS1="[${BLUE6}\u${RESET}@${BLUE6}\h${RESET}]:${BLUE21}\w${RESET}${BLUE6}\$${RESET} "
 
 export NVM_DIR="$HOME/.nvm"

@@ -65,7 +65,7 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    margin:                      10px;
+    margin:                      5px 10px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               10px;
@@ -122,13 +122,13 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     7px;
+    padding:                     5px;
     background-color:            inherit;
     text-color:                  inherit;
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     7px 0px 10px 10px;
+    padding:                     10px 0px 10px 10px;
     expand:                      false;
     str:                         "";
     background-color:            inherit;
@@ -136,7 +136,7 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    padding:                     7px;
+    padding:                     10px;
     expand:                      false;
     width:                       20em;
     background-color:            inherit;
@@ -185,7 +185,7 @@ listview {
     
     spacing:                     0px;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     5px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
