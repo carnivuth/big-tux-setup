@@ -10,7 +10,7 @@
 ## style-1   style-2   style-3   style-4   style-5
 
 # Current Theme
-dir="$HOME/.config/rofi/launchers/carnilauncher"
+dir="$HOME/.config/rofi/powermenu/carnipowermenu"
 theme='style-10'
 
 # CMDs
@@ -36,14 +36,19 @@ rofi_cmd() {
 
 # Confirmation CMD
 confirm_cmd() {
-	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
-		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
-		-theme-str 'listview {columns: 2; lines: 1;}' \
-		-theme-str 'element-text {horizontal-align: 0.5;}' \
-		-theme-str 'textbox {horizontal-align: 0.5;}' \
-		-dmenu \
-		-p 'Confirmation' \
-		-mesg 'Are you Sure?' \
+	#rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
+	#	-theme-str 'mainbox {children: [ "message", "listview" ];}' \
+	#	-theme-str 'listview {columns: 2; lines: 1;}' \
+	#	-theme-str 'element-text {horizontal-align: 0.5;}' \
+	#	-theme-str 'textbox {horizontal-align: 0.5;}' \
+	#	-dmenu \
+	#	-p 'Confirmation' \
+	#	-mesg 'Are you Sure?' \
+	#	-theme ${dir}/${theme}.rasi
+
+	rofi -dmenu \
+		-p 'Confirmation'\
+		-mesg 'Are you Sure?'\
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -59,8 +64,8 @@ run_rofi() {
 
 # Execute Command
 run_cmd() {
-	selected="$(confirm_exit)"
-	if [[ "$selected" == "$yes" ]]; then
+	#selected="$(confirm_exit)"
+	#if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
@@ -80,9 +85,9 @@ run_cmd() {
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi
 		fi
-	else
-		exit 0
-	fi
+	#else
+	#	exit 0
+	#fi
 }
 
 # Actions
@@ -97,9 +102,12 @@ case ${chosen} in
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
+		elif [[ -x '/usr/bin/dm-tool' ]]; then
+			dm-tool lock
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
-		fi
+	
+		fi 
         ;;
     $suspend)
 		run_cmd --suspend

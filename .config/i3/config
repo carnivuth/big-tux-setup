@@ -23,6 +23,13 @@ set $mod Mod4
 #font Hack:style=Bold
 #font Hack:style=Bold Italic
 font Hack:style=Regular 13
+font Hack:style=Regular 13
+font Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular
+font Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid
+font Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
+font Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
+
+#remove borders from i3 windows
 for_window [class="^.*"] border pixel 0
 
 # Start XDG autostart .desktop files using dex. See also
@@ -45,7 +52,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pamixer -t 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
+#detect monitor layout
+exec_always autorandr -c
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -108,6 +116,17 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+# set workspace on all monitors
+workspace $ws1 output eDP-1 
+workspace $ws2 output HDMI-1-0
+workspace $ws3 output eDP-1 
+workspace $ws4 output HDMI-1-0
+workspace $ws5 output eDP-1 
+workspace $ws6 output HDMI-1-0
+workspace $ws7 output eDP-1 
+workspace $ws8 output HDMI-1-0
+workspace $ws9 output eDP-1 
+workspace $ws10 output HDMI-1-0
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -120,7 +139,12 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-
+# switch to combo workspace
+bindsym $mod+KP_1 workspace number $ws1; workspace number $ws2
+bindsym $mod+KP_2 workspace number $ws3; workspace number $ws4
+bindsym $mod+KP_3 workspace number $ws5; workspace number $ws6
+bindsym $mod+KP_4 workspace number $ws7; workspace number $ws8
+bindsym $mod+KP_5 workspace number $ws9; workspace number $ws10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2
@@ -202,13 +226,14 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 #suspend key binding
-bindsym $mod+s exec suspend.sh
+#bindsym $mod+s exec suspend.sh
 #turn of bluetooth at startup
 #exec_always btoff.sh
 
 #launch network manager
 bindsym $mod+n exec networkmanager_dmenu
-
+#run gnome polkit for graphical autentication prompt
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #screenshot 
 bindsym $mod+Print exec flameshot screen
