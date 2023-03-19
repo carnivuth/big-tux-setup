@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+## Author  : Aditya Shakya (adi1090x)
+## Github  : @adi1090x
+#
+## Applets : Quick Links
+
+# Import Current Theme
+source "$HOME"/.config/rofi/carniapplets/shared/theme.bash
+theme="$type/$style"
+
+# Theme Elements
+prompt='Quick Links'
+mesg="Using '$BROWSER' as web browser"
+
+if [[ ( "$theme" == *'type-1'* ) || ( "$theme" == *'type-3'* ) || ( "$theme" == *'type-5'* ) ]]; then
+	list_col='1'
+	list_row='6'
+elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) || ( "$theme" == *'type-6'* ) ]]; then
+	list_col='6'
+	list_row='1'
+fi
+
+if [[ ( "$theme" == *'type-1'* ) || ( "$theme" == *'type-5'* ) ]]; then
+	efonts="JetBrains Mono Nerd Font 10"
+else
+	efonts="JetBrains Mono Nerd Font 28"
+fi
+
+# Options
+layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
+if [[ "$layout" == 'NO' ]]; then
+	option_1=" browser"
+	option_2=" mailer"
+	option_3=" Youtube"
+	option_4=" Github"
+	option_5=" Reddit"
+	option_6=" Twitter"
+else
+	option_1=""
+	option_2=""
+	option_3=""
+	option_4=""
+	option_5=""
+	option_6=""
+fi
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$prompt" \
+		-mesg "$mesg" \
+		-markup-rows \
+		-theme ${theme}
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
+}
+
+# Execute Command
+run_cmd() {
+	if [[ "$1" == '--opt1' ]]; then
+		firefox 'https://www.google.com/' &
+	elif [[ "$1" == '--opt2' ]]; then
+		thunderbird &
+	elif [[ "$1" == '--opt3' ]]; then
+		firefox 'https://www.youtube.com/' &
+	elif [[ "$1" == '--opt4' ]]; then
+		firefox 'https://www.github.com/' &
+	elif [[ "$1" == '--opt5' ]]; then
+		firefox 'https://www.reddit.com/' &
+	elif [[ "$1" == '--opt6' ]]; then
+		firefox 'https://www.twitter.com/' &
+	fi
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $option_1)
+		run_cmd --opt1
+        ;;
+    $option_2)
+		run_cmd --opt2
+        ;;
+    $option_3)
+		run_cmd --opt3
+        ;;
+    $option_4)
+		run_cmd --opt4
+        ;;
+    $option_5)
+		run_cmd --opt5
+        ;;
+    $option_6)
+		run_cmd --opt6
+        ;;
+esac
