@@ -53,7 +53,7 @@ bindsym XF86AudioMute exec --no-startup-id pamixer -t
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 #detect monitor layout
-exec_always autorandr -c
+exec_always --no-startup-id autorandr -c
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -191,7 +191,7 @@ bindsym XF86MonBrightnessDown exec  brightnessctl -d intel_backlight s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10% 
 
 #start polybar
-exec_always  .config/polybar/carnibar/launch.sh
+exec_always --no-startup-id  .config/polybar/carnibar/launch.sh
 #set background image
 exec_always --no-startup-id  "~/.fehbg"
 #remove window titlebar
@@ -200,9 +200,9 @@ default_border pixel 0
 set $gaps_value 12
 gaps inner $gaps_value
 #start picom  compositor
-exec_always picom  --config ~/.config/picom/picom.conf &
+exec_always --no-startup-id picom  --config ~/.config/picom/picom.conf &
 #setup tap to click touchpad
-exec_always xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 #exec_always --no-startup-id /home/matteo/.local/bin/i3-layouts
 set $i3l spiral to workspace $ws1
 set $i3l spiral to workspace $ws2
@@ -233,7 +233,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #launch network manager
 bindsym $mod+n exec networkmanager_dmenu
 #run gnome polkit for graphical autentication prompt
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #screenshot 
 bindsym $mod+Print exec flameshot screen

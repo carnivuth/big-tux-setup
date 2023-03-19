@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "$@" >> /var/log/notifications
-[[ "$1" != "" ]] && paplay --volume=1 ~/scripts/system/notification.wav 
+echo "$@" >> /home/matteo/notifications
+[[ "$1" != "Spotify" ]] && paplay --volume=1 ~/scripts/system/notification.wav 
