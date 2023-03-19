@@ -302,7 +302,7 @@ message {
     text-color:                  @foreground-colour;
 }
 textbox {
-    padding:                     8px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
@@ -316,7 +316,7 @@ textbox {
     markup:                      true;
 }
 error-message {
-    padding:                     0px;
+    padding:                     0px 20px 0px 0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
