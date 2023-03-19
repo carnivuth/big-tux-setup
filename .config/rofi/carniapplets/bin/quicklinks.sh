@@ -37,6 +37,7 @@ if [[ "$layout" == 'NO' ]]; then
 	option_5=" Reddit"
 	option_6=" Twitter"
 	option_7=" Whatsapp"
+	option_8=" Telegram"
 else
 	option_1=""
 	option_2=""
@@ -45,6 +46,7 @@ else
 	option_5=""
 	option_6=""
 	option_7=""
+	option_8=""
 fi
 
 # Rofi CMD
@@ -58,25 +60,27 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
 }
 
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		firefox 'https://www.google.com/' &
+		firefox --new-window 'https://www.google.com/' &
 	elif [[ "$1" == '--opt2' ]]; then
 		thunderbird &
 	elif [[ "$1" == '--opt3' ]]; then
-		firefox 'https://www.youtube.com/' &
+		firefox --new-window 'https://www.youtube.com/' &
 	elif [[ "$1" == '--opt4' ]]; then
-		firefox 'https://www.github.com/' &
+		firefox --new-window 'https://www.github.com/' &
 	elif [[ "$1" == '--opt5' ]]; then
-		firefox 'https://www.reddit.com/' &
+		firefox --new-window 'https://www.reddit.com/' &
 	elif [[ "$1" == '--opt6' ]]; then
-		firefox 'https://www.twitter.com/' &
+		firefox --new-window 'https://www.twitter.com/' &
 	elif [[ "$1" == '--opt7' ]]; then
-		firefox 'https://web.whatsapp.com/' &
+		firefox --new-window 'https://web.whatsapp.com/' &
+	elif [[ "$1" == '--opt8' ]]; then
+		telegram-desktop &
 	
 	fi
 }
@@ -106,6 +110,10 @@ case ${chosen} in
 	$option_7)
 		run_cmd --opt7
         ;;
+	$option_8)
+		run_cmd --opt8
+        ;;
+
 	*)
 		;;
 esac
