@@ -56,7 +56,7 @@ floating_modifier $mod
 exec_always --no-startup-id autorandr -c
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -187,8 +187,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 #brightness controls
-bindsym XF86MonBrightnessDown exec  brightnessctl -d intel_backlight s 10%- 
-bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +10% 
+bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl -d intel_backlight s 10%- 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d intel_backlight s +10% 
 
 #start polybar
 exec_always --no-startup-id  .config/polybar/carnibar/launch.sh
@@ -216,30 +216,30 @@ set $i3l spiral to workspace $ws9
 set $i3l spiral to workspace $ws10
 
 # keybinding to lock screen
-bindsym $mod+l exec "dm-tool lock "
+bindsym $mod+l exec --no-startup-id "dm-tool lock "
 #start dunst
 exec_always --no-startup-id "killall dunst"
 exec_always --no-startup-id dunst
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 #suspend key binding
 #bindsym $mod+s exec suspend.sh
 #turn of bluetooth at startup
 #exec_always btoff.sh
 
 #launch network manager
-bindsym $mod+n exec networkmanager_dmenu
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 #run gnome polkit for graphical autentication prompt
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #screenshot 
-bindsym $mod+Print exec flameshot screen
+bindsym $mod+Print exec --no-startup-id flameshot screen
 #manual screenshot 
-bindsym $mod+Shift+Print exec flameshot gui &
+bindsym $mod+Shift+Print exec --no-startup-id flameshot gui &
 #launch telegram 
-bindsym $mod+t exec telegram-desktop
+bindsym $mod+t exec --no-startup-id telegram-desktop
 #launch powermenu
-bindsym $mod+p exec ~/.config/rofi/powermenu/carnipowermenu/powermenu.sh
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/carnipowermenu/powermenu.sh
