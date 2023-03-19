@@ -6,7 +6,9 @@
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
-
+/*
+USE_ICON=YES
+*/
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run";
@@ -103,7 +105,6 @@ mainbox {
     border-color:                @border-colour;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
-    oont: "Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular";
 }
 
 /*****----- Inputbar -----*****/
