@@ -4,7 +4,7 @@ bluetooth_print() {
     echo "run script" >> ~/bt-script
     if [ "$(systemctl is-active "bluetooth.service")" = "active" ] &&[ "$(bluetoothctl show|grep -o "Powered: yes")" = "Powered: yes" ]; then
 
-            printf  'bt on'
+            printf  'pippo'
             devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
             counter=0
 
@@ -27,7 +27,7 @@ bluetooth_print() {
             
         else
             
-            printf 'bt off'
+            printf 'pippo off'
         fi
     done
 }

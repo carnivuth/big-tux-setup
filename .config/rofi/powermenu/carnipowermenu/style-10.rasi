@@ -102,7 +102,7 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [  "message", "listview"];
+    children:                    [ "listview"];
 }
 
 /*****----- Inputbar -----*****/
@@ -184,7 +184,7 @@ listview {
     location:                    center;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     5px 0px  0px 10px;
+    padding:                     5px 0px  0px 885px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;

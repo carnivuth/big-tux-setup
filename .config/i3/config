@@ -245,3 +245,5 @@ bindsym $mod+t exec --no-startup-id telegram-desktop
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/carnipowermenu/powermenu.sh
 #launch shortcut
 bindsym $mod+o exec --no-startup-id ~/.config/rofi/carniapplets/bin/quicklinks.sh
+#lock spotify to workspace 10
+for_window [class="Spotify"] move to workspace $ws10

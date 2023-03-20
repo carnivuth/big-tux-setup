@@ -30,7 +30,7 @@ fi
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" browser"
+	option_1=" browser"
 	option_2=" mailer"
 	option_3=" Youtube"
 	option_4=" Github"
@@ -38,8 +38,9 @@ if [[ "$layout" == 'NO' ]]; then
 	option_6=" Twitter"
 	option_7=" Whatsapp"
 	option_8=" Telegram"
+	option_9="PH Pornhub"
 else
-	option_1=""
+	option_1=""
 	option_2=""
 	option_3=""
 	option_4=""
@@ -47,6 +48,7 @@ else
 	option_6=""
 	option_7=""
 	option_8=""
+	option_9="PH"
 fi
 
 # Rofi CMD
@@ -60,7 +62,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8\n$option_9" | rofi_cmd
 }
 
 # Execute Command
@@ -81,6 +83,8 @@ run_cmd() {
 		firefox --new-window 'https://web.whatsapp.com/' &
 	elif [[ "$1" == '--opt8' ]]; then
 		telegram-desktop &
+	elif [[ "$1" == '--opt9' ]]; then
+		firefox --private-window 'https://pornhub.com/' &
 	
 	fi
 }
@@ -112,6 +116,9 @@ case ${chosen} in
         ;;
 	$option_8)
 		run_cmd --opt8
+        ;;
+	$option_9)
+		run_cmd --opt9
         ;;
 
 	*)

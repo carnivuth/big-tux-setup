@@ -18,13 +18,13 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host="$(cat /etc/hostname)"
 
 # Options
-shutdown=' Shutdown'
-reboot=' Reboot'
-lock=' Lock'
-suspend=' Suspend'
-logout=' Logout'
-yes=' Yes'
-no=' No'
+shutdown=''
+reboot=''
+lock=''
+suspend=''
+logout=''
+yes=''
+no=''
 
 # Rofi CMD
 rofi_cmd() {
@@ -73,6 +73,7 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
+			dm-tool lock
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
