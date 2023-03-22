@@ -460,3 +460,6 @@
 [play_sound]
     summary = "*"
     script = ~/scripts/system/alert.sh
+[Spotify]
+appname = "Spotify"
+format = "<b>%s</b>\n%b"

@@ -221,8 +221,7 @@ bindsym $mod+l exec --no-startup-id "dm-tool lock "
 exec_always --no-startup-id "killall dunst"
 exec_always --no-startup-id dunst
 # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
-bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 #suspend key binding
