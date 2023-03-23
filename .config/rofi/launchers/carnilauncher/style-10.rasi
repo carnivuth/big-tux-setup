@@ -103,7 +103,6 @@ mainbox {
     border-color:                @border-colour;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
-    oont: "Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular";
 }
 
 /*****----- Inputbar -----*****/
