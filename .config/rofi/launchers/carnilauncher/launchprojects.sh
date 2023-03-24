@@ -1,13 +1,5 @@
 #!/bin/bash
-#get directories under home folder
-
-#print all directories with .git folder
-# show rofi with folders
-# run code folder selected
-
 # Import Current Theme
-
-
 dir="$HOME/.config/rofi/launchers/carnilauncher"
 theme='style-10'
 #project folders
@@ -28,8 +20,9 @@ run_rofi() {
 
 	echo -e "$(for dir in ${FOLDERS[@]}; do ls -d "$dir"/*/ ; done)" | rofi_cmd
 }
-
+# show rofi with folders
 chosen="$(run_rofi)"
 if [ -d "$chosen"  ]; then
+# run code folder selected
 code "$chosen" 
 fi
