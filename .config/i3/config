@@ -247,5 +247,8 @@ bindsym $mod+o exec --no-startup-id ~/.config/rofi/carniapplets/bin/quicklinks.s
 #lock spotify to workspace 10
 for_window [class="Spotify"] move to workspace $ws10
 #launch rofi launch projects
-bindsym $mod+w exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh
+#code
+bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh code
+#intellij idea
+bindsym $mod+j exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh idea
 

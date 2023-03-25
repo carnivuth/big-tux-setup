@@ -3,7 +3,7 @@
 dir="$HOME/.config/rofi/launchers/carnilauncher"
 theme='style-10'
 #project folders
-FOLDERS=( "/home/matteo" "/home/matteo/.config" "/home/matteo/universita/iss/iss_2023_matteo_longhi" "/home/matteo/universita/iss/iss_2023_matteo_longhi/projects" )
+FOLDERS=( "/home/matteo" "/home/matteo/.config" "/home/matteo/universita/iss/iss_2023_matteo_longhi" "/home/matteo/universita/iss/iss_2023_matteo_longhi/projects" "/home/matteo/universita/iss/isslab23" )
 
 #rofi utilities
 # Rofi CMD
@@ -24,5 +24,9 @@ run_rofi() {
 chosen="$(run_rofi)"
 if [ -d "$chosen"  ]; then
 # run code folder selected
-code "$chosen" 
+if [ "$#" -eq 1 ]; then
+	"$1" "$chosen"
+else
+	code "$chosen" 
+fi
 fi
