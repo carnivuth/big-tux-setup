@@ -9,7 +9,7 @@
 source "$HOME"/.config/rofi/carniapplets/shared/theme.bash
 theme="$type/$style"
 #project folders
-FOLDERS=( "/home/matteo" "/home/matteo/.config" "/home/matteo/universita/iss/iss_2023_matteo_longhi" "/home/matteo/universita/iss/iss_2023_matteo_longhi/projects" )
+FOLDERS=( "/home/matteo" "/home/matteo/.config" "/home/matteo/universita/iss/iss_2023_matteo_longhi" "/home/matteo/universita/iss" "/home/matteo/universita/iss/iss_2023_matteo_longhi/projects" )
 
 #rofi utilities
 # Rofi CMD
