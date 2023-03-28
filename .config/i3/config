@@ -253,3 +253,5 @@ bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launc
 bindsym $mod+j exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh idea
 #launch browser
 bindsym $mod+b exec --no-startup-id firefox
+#launch libinput-gestures
+exec_always --no-startup-id libinput-gestures-setup autostart start 
