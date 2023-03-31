@@ -1,0 +1,9 @@
+2023/03/31-12:16:01.793 9f5f Reusing MANIFEST /home/matteo/.config/Logseq/Local Storage/leveldb/MANIFEST-000001
+2023/03/31-12:16:01.799 9f5f Recovering log #127
+2023/03/31-12:16:01.800 9f5f Reusing old log /home/matteo/.config/Logseq/Local Storage/leveldb/000127.log 
+2023/03/31-12:43:59.386 ab66 Level-0 table #132: started
+2023/03/31-12:43:59.397 ab66 Level-0 table #132: 13828 bytes OK
+2023/03/31-12:43:59.402 ab66 Delete type=0 #127
+2023/03/31-13:40:38.068 b930 Level-0 table #134: started
+2023/03/31-13:40:38.079 b930 Level-0 table #134: 12545 bytes OK
+2023/03/31-13:40:38.083 b930 Delete type=0 #131

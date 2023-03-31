@@ -37,7 +37,6 @@ if [[ "$layout" == 'NO' ]]; then
 	option_5=" Reddit"
 	option_6=" Virtuale"
 	option_7=" Whatsapp"
-	option_8=" Telegram"
 	option_9=" Drive"
 
 	
@@ -49,7 +48,6 @@ else
 	option_5=""
 	option_6=""
 	option_7=""
-	option_8=""
 	option_9=""
 
 	
@@ -66,7 +64,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8\n$option_9" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_9" | rofi_cmd
 }
 
 # Execute Command
@@ -85,8 +83,6 @@ run_cmd() {
 		firefox --new-window 'https://virtuale.unibo.it/' &
 	elif [[ "$1" == '--opt7' ]]; then
 		firefox --new-window 'https://web.whatsapp.com/' &
-	elif [[ "$1" == '--opt8' ]]; then
-		telegram-desktop &
 	elif [[ "$1" == '--opt9' ]]; then
 		firefox --new-window 'https://drive.google.com' &
 
@@ -118,9 +114,6 @@ case ${chosen} in
         ;;
 	$option_7)
 		run_cmd --opt7
-        ;;
-	$option_8)
-		run_cmd --opt8
         ;;
 	$option_9)
 		run_cmd --opt9
