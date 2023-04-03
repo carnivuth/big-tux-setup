@@ -2,6 +2,7 @@
 /home/matteo/.config/dunst .config/
 /home/matteo/.config/polybar .config/
 /home/matteo/.config/rofi .config/
+/home/matteo/.config/awesome .config/
 /home/matteo/.config/picom .config/
 /home/matteo/.profile ./arch_home/
 /home/matteo/.bashrc ./arch_home/

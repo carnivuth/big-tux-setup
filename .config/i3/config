@@ -244,6 +244,8 @@ bindsym $mod+t exec --no-startup-id telegram-desktop
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/carnipowermenu/powermenu.sh
 #launch shortcut
 bindsym $mod+o exec --no-startup-id ~/.config/rofi/carniapplets/bin/quicklinks.sh
+# launch quicksearch shortcut
+bindsym $mod+s exec --no-startup-id firefox --new-window &
 #lock spotify to workspace 10
 for_window [class="Spotify"] move to workspace $ws10
 #launch rofi launch projects
