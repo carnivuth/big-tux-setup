@@ -22,13 +22,13 @@ set $mod Mod4
 #font Hack:style=Italic
 #font Hack:style=Bold
 #font Hack:style=Bold Italic
-font Hack:style=Regular 13
-font Hack:style=Regular 13
-font Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular
-font Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid
-font Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
-font Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
-
+#font Hack:style=Regular 13
+#font Hack:style=Regular 13
+#font Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular
+#font Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid
+#font Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
+#font Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
+font JetBrainsMonoNL Nerd Font:style=SemiBold,Regular
 #remove borders from i3 windows
 for_window [class="^.*"] border pixel 0
 
@@ -197,8 +197,9 @@ exec_always --no-startup-id  "~/.fehbg"
 #remove window titlebar
 default_border pixel 0
 #window gaps settings
-set $gaps_value 12
+set $gaps_value 8
 gaps inner $gaps_value
+
 #start picom  compositor
 exec_always --no-startup-id picom  --config ~/.config/picom/picom.conf &
 #setup tap to click touchpad

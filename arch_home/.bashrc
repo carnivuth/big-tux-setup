@@ -26,7 +26,14 @@ export PATH="$PATH:/home/matteo/applications"
 export PATH="$PATH:/home/matteo/scripts"
 export PATH="$PATH:/home/matteo/scripts/system"
 export PATH="$PATH:/home/matteo/.local/bin"
-PS1="[${BLUE6}\u${RESET}@${BLUE6}\h${RESET}]:${BLUE21}\w${RESET}${BLUE6}\$${RESET} "
+#PS1="[${BLUE6}\u${RESET}@${BLUE6}\h${RESET}]:${BLUE21}\w${RESET}${BLUE6}\$${RESET} "
+#poweline 
+if [ -f "/usr/share/powerline/bindings/bash/powerline.sh" ]; then
+	powerline-daemon -q
+	POWERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_SELECT=1
+	source "/usr/share/powerline/bindings/bash/powerline.sh"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

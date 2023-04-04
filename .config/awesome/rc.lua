@@ -572,9 +572,9 @@ beautiful.useless_gap = 5
 autorun = true
 autorunApps =
 {
-   "dunst",
-   "picom",
-   "libinput-gestures-setup autostart start",
+   "dunst &",
+   "picom &",
+   "libinput-gestures-setup autostart start &",
 }
 if autorun then
    for app = 1, #autorunApps do
