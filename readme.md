@@ -10,3 +10,4 @@ linux config files backups for arch installation
 - clone repo
 - set credential on `big-tux-setup/archinstall_files/user_credentials.json`
 - run  `archinstall --config "big-tux-setup/archinstall_files/user_configuration.json"  --creds "big-tux-setup/archinstall_files/user_credentials.json"`
+##### check also my [vscode theme](https://github.com/carnivuth/snorlax-theme)
