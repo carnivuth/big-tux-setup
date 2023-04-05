@@ -13,5 +13,5 @@ kill -9 $(pgrep -x 'polybar') >/dev/null 2>&1
 # Launch the bar
 xrandr |grep " connected" | cut -d ' ' -f 1 | while read m; do 
     export MONITOR="$m"
-    polybar -q  main -c /home/matteo/.config/polybar/carnibar/config.ini & 
+    polybar -q main -c /home/matteo/.config/polybar/carnibar/config.ini & 
 done
