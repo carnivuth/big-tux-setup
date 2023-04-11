@@ -11,7 +11,7 @@
 configuration {
 	modi:                       "drun,run";
     show-icons:                 true;
-    display-drun:               "";
+    display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
@@ -127,9 +127,9 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     10px 0px 10px 10px;
+    padding:                     10px 5px 10px 10px;
     expand:                      false;
-    str:                         "";
+    str:                         "";
     background-color:            inherit;
     text-color:                  inherit;
 }

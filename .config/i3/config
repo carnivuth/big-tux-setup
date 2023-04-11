@@ -228,7 +228,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 #suspend key binding
 #bindsym $mod+s exec suspend.sh
 #turn of bluetooth at startup
-exec --no-startup id bluetoothctl poweroff
+exec --no-startup-id bluetoothctl poweroff
 
 #launch network manager
 bindsym $mod+n exec --no-startup-id networkmanager_dmenu
