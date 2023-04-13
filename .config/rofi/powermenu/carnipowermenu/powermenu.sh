@@ -18,7 +18,7 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host="$(cat /etc/hostname)"
 
 # Options
-shutdown='󰤆'
+shutdown=''
 reboot=''
 lock=''
 suspend=''

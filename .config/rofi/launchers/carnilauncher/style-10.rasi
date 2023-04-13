@@ -127,11 +127,11 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     10px 5px 10px 10px;
+    padding:                     10px 5px 10px 15px;
     expand:                      false;
-    str:                         "";
+    str:                         "";
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @icons;
 }
 entry {
     enabled:                     true;

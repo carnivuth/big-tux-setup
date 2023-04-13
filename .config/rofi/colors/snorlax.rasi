@@ -13,4 +13,5 @@
     selected:       #37a538FF;
     active:         #37a538FF;
     urgent:         #fce965FF;
+    icons:          #37a538FF;
 }
