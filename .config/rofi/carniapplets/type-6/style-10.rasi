@@ -59,7 +59,7 @@ window {
     anchor:                      north;
     fullscreen:                  false;
     width:                       100%;
-    height:                       50px;
+    height:                       3.5%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -186,7 +186,7 @@ listview {
     
     spacing:                     0px;
     margin:                      0px;
-    padding:                     5px 0px 0px 830px;
+    padding:                     5px 0px 40px  45%;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
@@ -207,7 +207,7 @@ element {
     enabled:                     true;
     spacing:                     8px;
     margin:                      0px;
-    padding:                     5px 8px;
+    padding:                     1px 8px;
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @border-colour;

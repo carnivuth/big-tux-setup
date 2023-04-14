@@ -35,7 +35,7 @@ if [[ "$layout" == 'NO' ]]; then
 	option_3=" Youtube"
 	option_4=" Github"
 	option_5=" Reddit"
-	option_6=" Virtuale"
+	option_6=" Virtuale"
 	option_7=" Whatsapp"
 	option_9=" Drive"
 
@@ -46,7 +46,7 @@ else
 	option_3=""
 	option_4=""
 	option_5=""
-	option_6=""
+	option_6=""
 	option_7=""
 	option_9=""
 
