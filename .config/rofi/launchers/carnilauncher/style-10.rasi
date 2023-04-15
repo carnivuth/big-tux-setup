@@ -10,6 +10,7 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run";
+    combi-modes:                "drun,run";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
@@ -74,7 +75,7 @@ window {
     /* Backgroud Colors */
     background-color:            @background-colour;
     /* Backgroud Image */
-    //background-image:          url("/path/to/image.png", none);
+    //background-image:          url("/usr/share/backgrounds/Snorlax_and_quilava.jpg", none);
     /* Simple Linear Gradient */
     //background-image:          linear-gradient(red, orange, pink, purple);
     /* Directional Linear Gradient */
@@ -89,7 +90,7 @@ horibox {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
-    children:                    ["textbox-prompt-colon",  "entry", "listview" ];
+    children:                    ["textbox-prompt-colon",  "entry", "listview"  ];
 }
 
 /*****----- Main Box -----*****/
@@ -135,7 +136,7 @@ entry {
     enabled:                     true;
     padding:                     8px 10px 10px 10px;
     expand:                      false;
-    width:                       20em;
+    width:                       10%;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
