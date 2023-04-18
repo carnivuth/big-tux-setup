@@ -1,11 +1,12 @@
 [Unit]
-Description=Low battery notification deamon
+Description=emergency shutdown deamon
 
 
 [Service]
-ExecStart=/home/matteo/scripts/system/battery/battery.sh
+ExecStart=/home/matteo/scripts/system/battery/emergency-shutdown.sh
 Restart=always
 Environment="DISPLAY=:0" "XAUTHORITY=/home/matteo/.Xauthority"
+
 
 [Install]
 WantedBy=default.target
