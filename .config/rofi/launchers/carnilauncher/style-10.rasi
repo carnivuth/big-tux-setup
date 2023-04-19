@@ -131,6 +131,7 @@ textbox-prompt-colon {
     str:                         "";
     background-color:            inherit;
     text-color:                  @icons;
+    font-size:                   24px;
 }
 entry {
     enabled:                     true;
