@@ -245,16 +245,16 @@ bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/carnipowermenu/powe
 #launch shortcut
 bindsym $mod+o exec --no-startup-id ~/.config/rofi/carniapplets/bin/quicklinks.sh
 # launch quicksearch shortcut
-bindsym $mod+s exec --no-startup-id firefox --new-window &
+bindsym $mod+s exec --no-startup-id thunar &
 #lock spotify to workspace 10
-for_window [class="Spotify"] move to workspace $ws10
+for_window [class="Spotify"] move to workspace $ws10; workspace $ws10
 #launch rofi launch projects
 #code
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh code
 #intellij idea
 bindsym $mod+j exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh idea
-#launch browser
-bindsym $mod+b exec --no-startup-id firefox
-
+#toggle bluetooth
+bindsym $mod+b exec --no-startup-id /home/matteo/.config/polybar/carnibar/scripts/bluetooth.sh --toggle
 #launch libinput-gestures
 exec_always --no-startup-id libinput-gestures-setup autostart start &
+
