@@ -29,85 +29,59 @@ set $mod Mod4
 #font Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
 #font Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
 font JetBrainsMonoNL Nerd Font:style=SemiBold,Regular
+
 ######################################### FONTS ##############################################
+
 ######################################### WINDOW OPTION ##############################################
+
 #remove borders from i3 windows
 for_window [class="^.*"] border pixel 0
+
 # set floating as default configuration for some programs
 for_window [class="Thunar"] floating enabled
+
 ######################################### WINDOW OPTION ##############################################
+
+######################################### STARTUP APPLICATIONS ##############################################
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- 'dm-tool lock' --nofork
-
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-#control audio with pamixer
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
-bindsym XF86AudioMute exec --no-startup-id pamixer -t 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+
 #detect monitor layout
 exec_always --no-startup-id autorandr -c
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+#start polybar
+exec_always --no-startup-id  .config/polybar/carnibar/launch.sh
 
-# kill focused window
-bindsym $mod+q kill
+#set background image
+exec_always --no-startup-id  "~/.fehbg"
 
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launcher.sh
+#start picom  compositor
+exec_always --no-startup-id picom  &
 
-#change focus
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#setup tap to click touchpad
+exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 
-# move focused window
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#start dunst
+exec_always --no-startup-id "killall dunst"
+exec_always --no-startup-id dunst
 
-# split in horizontal orientation
-bindsym $mod+h split h
+#turn of bluetooth at startup
+exec --no-startup-id bluetoothctl power off
 
-# split in vertical orientation
-bindsym $mod+v split v
+#run gnome polkit for graphical autentication prompt
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+#launch libinput-gestures
+exec_always --no-startup-id libinput-gestures-setup autostart start &
 
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+######################################### STARTUP APPLICATIONS ##############################################
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 ######################################### WORKSPACES ##############################################
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -170,10 +144,6 @@ bindsym $mod+control+Mod1+Right move window to workspace next; workspace next
 bindsym $mod+control+Mod1+Left move window to workspace  prev; workspace prev
 ######################################### WORKSPACES ##############################################
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
 ######################################### RESIZE ##############################################
 
 # resize window (you can also use the mouse for that)
@@ -196,65 +166,128 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 ######################################### RESIZE ##############################################
 
+######################################### BYNDINGS ##############################################
+
+# SCRIPTS FOLDER 
+set $folder ~/scripts
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# kill focused window
+bindsym $mod+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id $folder/rofi/launcher.sh
+
+#change focus
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+#audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMute exec --no-startup-id pamixer -t 
+
 #brightness controls
 bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl -d intel_backlight s 10%- 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d intel_backlight s +10% 
 
-#start polybar
-exec_always --no-startup-id  .config/polybar/carnibar/launch.sh
-#set background image
-exec_always --no-startup-id  "~/.fehbg"
-#remove window titlebar
-default_border pixel 0
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+#launch network manager
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+
+#screenshot 
+bindsym $mod+Print exec --no-startup-id flameshot screen
+
+#manual screenshot 
+bindsym $mod+Shift+Print exec --no-startup-id flameshot gui &
+
+#launch telegram 
+bindsym $mod+t exec --no-startup-id telegram-desktop
+
+#launch powermenu
+bindsym $mod+p exec --no-startup-id $folder/rofi/powermenu.sh
+
+#launch shortcut
+bindsym $mod+o exec --no-startup-id $folder/rofi/quicklinks.sh
+
+# launch browser
+bindsym $mod+s exec --no-startup-id $folder/rofi/quicksearch.sh
+
+# launch filemanager
+bindsym $mod+e exec --no-startup-id thunar  &
+
+#launch project menu
+#code
+bindsym $mod+c exec --no-startup-id $folder/rofi/launchprojects.sh code
+#intellij idea
+bindsym $mod+j exec --no-startup-id $folder/rofi/launchprojects.sh idea
+
+#toggle bluetooth
+bindsym $mod+b exec --no-startup-id $folder/system/bluetooth/bluetooth.sh --toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+#lock screen
+bindsym $mod+l exec --no-startup-id "dm-tool lock "
+
+######################################### BYNDINGS ##############################################
+
+######################################### GAPS ##############################################
 
 #window gaps settings
 set $gaps_value 8
 gaps inner $gaps_value
 
-#start picom  compositor
-exec_always --no-startup-id picom  --config ~/.config/picom/picom.conf &
-#setup tap to click touchpad
-exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+######################################### GAPS ##############################################
 
-# keybinding to lock screen
-bindsym $mod+l exec --no-startup-id "dm-tool lock "
-#start dunst
-exec_always --no-startup-id "killall dunst"
-exec_always --no-startup-id dunst
-# Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-#suspend key binding
-#turn of bluetooth at startup
-exec --no-startup-id bluetoothctl power off
+######################################### SPOTIFY ##############################################
 
-#launch network manager
-bindsym $mod+n exec --no-startup-id networkmanager_dmenu
-#run gnome polkit for graphical autentication prompt
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-#screenshot 
-bindsym $mod+Print exec --no-startup-id flameshot screen
-#manual screenshot 
-bindsym $mod+Shift+Print exec --no-startup-id flameshot gui &
-#launch telegram 
-bindsym $mod+t exec --no-startup-id telegram-desktop
-#launch powermenu
-bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/carnipowermenu/powermenu.sh
-#launch shortcut
-bindsym $mod+o exec --no-startup-id ~/.config/rofi/carniapplets/bin/quicklinks.sh
-# launch quicksearch shortcut
-bindsym $mod+s exec --no-startup-id thunar &
 #lock spotify to workspace 10
 for_window [class="Spotify"] move to workspace $ws10; workspace $ws10
-#launch rofi launch projects
-#code
-bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh code
-#intellij idea
-bindsym $mod+j exec --no-startup-id ~/.config/rofi/launchers/carnilauncher/launchprojects.sh idea
-#toggle bluetooth
-bindsym $mod+b exec --no-startup-id /home/matteo/.config/polybar/carnibar/scripts/bluetooth.sh --toggle
-#launch libinput-gestures
-exec_always --no-startup-id libinput-gestures-setup autostart start &
 
+######################################### SPOTIFY ##############################################

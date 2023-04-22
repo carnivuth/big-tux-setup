@@ -10,8 +10,9 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run";
-    show-icons:                 false;
-    display-drun:               "";
+    combi-modes:                "drun,run";
+    show-icons:                 true;
+    display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
@@ -20,8 +21,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/rofi/shared/colors.rasi"
+@import                          "~/.config/rofi/shared/fonts.rasi"
 
 * {
     border-colour:               var(selected);
@@ -74,7 +75,7 @@ window {
     /* Backgroud Colors */
     background-color:            @background-colour;
     /* Backgroud Image */
-    //background-image:          url("/path/to/image.png", none);
+    //background-image:          url("/usr/share/backgrounds/Snorlax_and_quilava.jpg", none);
     /* Simple Linear Gradient */
     //background-image:          linear-gradient(red, orange, pink, purple);
     /* Directional Linear Gradient */
@@ -89,20 +90,18 @@ horibox {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
-    children:                    [  "listview" ];
+    children:                    ["textbox-prompt-colon",  "entry", "listview"  ];
 }
 
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    /*spacing:                     20px;*/
-   // margin:                      10px;
-    /*padding:                     40px;*/
+   
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [ "listview"];
+    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -127,17 +126,18 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     10px 0px 10px 10px;
+    padding:                     8px 5px 10px 15px;
     expand:                      false;
-    str:                         "";
+    str:                         "";
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @icons;
+    font-size:                   24px;
 }
 entry {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     8px 10px 10px 10px;
     expand:                      false;
-    width:                       20em;
+    width:                       10%;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
@@ -181,15 +181,16 @@ listview {
     reverse:                     false;
     fixed-height:                false;
     fixed-columns:               false;
-    location:                    center;
+    
     spacing:                     0px;
     margin:                      0px;
-    padding:                      5px 0px 40px  46%;
+    padding:                     5px 0px 40px 0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
+    cursor:                      "default";
 }
 scrollbar {
     handle-width:                5px ;
@@ -292,7 +293,7 @@ button selected {
 message {
     enabled:                     true;
     margin:                      0px;
-    padding:                     0px 0px 0px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
@@ -300,7 +301,7 @@ message {
     text-color:                  @foreground-colour;
 }
 textbox {
-    padding:                     8px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
@@ -314,7 +315,7 @@ textbox {
     markup:                      true;
 }
 error-message {
-    padding:                     0px;
+    padding:                     0px 20px 0px 0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
