@@ -10,7 +10,8 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run";
-    show-icons:                 false;
+    combi-modes:                "drun,run";
+    show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
@@ -53,28 +54,28 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    north;
-    anchor:                      north;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
-    width:                       100%;
-    height:                       3.5%;
+    width:                       50%;
+    height:                       50%;
     x-offset:                    0px;
     y-offset:                    0px;
 
-    children:                    [ horibox ];
+    children:                    [ mainbox ];
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      5px 10px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      4px solid;
     border-radius:               18px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
     background-color:            @background-colour;
     /* Backgroud Image */
-    //background-image:          url("/path/to/image.png", none);
+    //background-image:          url("/usr/share/backgrounds/Snorlax_and_quilava.jpg", none);
     /* Simple Linear Gradient */
     //background-image:          linear-gradient(red, orange, pink, purple);
     /* Directional Linear Gradient */
@@ -89,25 +90,23 @@ horibox {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
-    children:                    [  "listview" ];
+    children:                    ["textbox-prompt-colon","prompt",  "entry", "listview"  ];
 }
 
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    /*spacing:                     20px;*/
-   // margin:                      10px;
-    /*padding:                     40px;*/
+   
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [ "listview"];
+    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     false;
+    enabled:                     true;
     /*spacing:                     10px;*/
     margin:                      0px;
     padding:                     7px;
@@ -121,23 +120,24 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     5px;
+    padding:                     7px 5px 0px 7px ;
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @prompt;
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     10px 0px 10px 10px;
+    padding:                     7px 7px 10px 15px;
     expand:                      false;
-    str:                         "";
+    str:                         "󰲋";
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @icons;
+    font-size:                   24px;
 }
 entry {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     7px 10px 10px 10px;
     expand:                      false;
-    width:                       20em;
+    width:                       10%;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
@@ -172,24 +172,25 @@ case-indicator {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     2;
     lines:                       100;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
-    layout:                      horizontal;
+    layout:                      vertical;
     reverse:                     false;
     fixed-height:                false;
     fixed-columns:               false;
-    location:                    center;
+    
     spacing:                     0px;
     margin:                      0px;
-    padding:                      5px 0px 40px  46%;
+    padding:                     5px 0px 40px 0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
+    cursor:                      "default";
 }
 scrollbar {
     handle-width:                5px ;
@@ -201,9 +202,9 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     0px;
+    spacing:                     8px;
     margin:                      0px;
-    padding:                     2px 10px;
+    padding:                     6px 8px;
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @border-colour;
@@ -250,6 +251,7 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
+    size:                        32px;
     cursor:                      inherit;
 }
 element-text {
@@ -257,7 +259,7 @@ element-text {
     text-color:                  inherit;
     highlight:                   inherit;
     cursor:                      inherit;
-    vertical-align:              0.0;
+    vertical-align:              0.5;
     horizontal-align:            0.0;
 }
 
@@ -271,7 +273,7 @@ mode-switcher{
     border-radius:               4px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
-    text-color:                  @foreground-colour;
+    text-color:                  @mode-switcher-color;
 }
 button {
     padding:                     8px;
@@ -283,7 +285,7 @@ button {
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(normal-foreground);
+    background-color:            @mode-switcher-color;
     text-color:                  var(normal-background);
 }
 
@@ -291,7 +293,7 @@ button selected {
 message {
     enabled:                     true;
     margin:                      0px;
-    padding:                     0px 0px 0px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
@@ -299,7 +301,7 @@ message {
     text-color:                  @foreground-colour;
 }
 textbox {
-    padding:                     8px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
@@ -313,7 +315,7 @@ textbox {
     markup:                      true;
 }
 error-message {
-    padding:                     0px;
+    padding:                     0px 20px 0px 0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;

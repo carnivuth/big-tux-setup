@@ -89,7 +89,7 @@ horibox {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
-    children:                    [  "textbox-prompt-colon",  "entry", "listview" ];
+    children:                    [  "textbox-prompt-colon", "prompt", "entry","listview" ];
 }
 
 /*****----- Main Box -----*****/
@@ -121,9 +121,9 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     5px;
+    padding:                     7px;
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @prompt;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -135,7 +135,7 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    padding:                     10px;
+    padding:                      7px  0px 0px 0px;
     expand:                      false;
     width:                       20em;
     background-color:            inherit;

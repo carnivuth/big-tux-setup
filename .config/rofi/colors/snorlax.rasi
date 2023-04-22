@@ -14,4 +14,6 @@
     active:         #37a538FF;
     urgent:         #fce965FF;
     icons:          #37a538FF;
+    prompt:          #37a538FF;
+    mode-switcher-color: #37a538FF;
 }
