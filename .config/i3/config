@@ -80,6 +80,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #launch libinput-gestures
 exec_always --no-startup-id libinput-gestures-setup autostart start &
 
+#launch telegram
+exec --no-startup-id telegram-desktop &
 ######################################### STARTUP APPLICATIONS ##############################################
 
 ######################################### WORKSPACES ##############################################
