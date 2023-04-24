@@ -11,7 +11,7 @@
     // Choose the order of the modules
 
     "modules-left":[   "clock", "temperature","battery","pulseaudio", "backlight"],
-    "modules-center": [ "wlr/taskbar" ,"tray"],
+    "modules-center": [ "wlr/taskbar","wlr/workspaces" ,"tray"],
     "modules-right":[ "keyboard-state",    "network"],
     // Modules configuration
 
@@ -144,5 +144,10 @@
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 15,
         "on-click": "alacritty -e yay -Syu"
-    }
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+   }
 }

@@ -9,9 +9,9 @@ BLUE6="\[$(tput setaf 6)\]"
 BLUE21="\[$(tput setaf 21)\]"
 RESET="\[$(tput sgr0)\]"
 
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
-alias la='ls --color=auto -a'
+alias ls='ls --color=auto -p'
+alias ll='ls --color=auto -pl'
+alias la='ls --color=auto -pa'
 
 alias grep='grep --color=auto'
 alias lessssgoooooooooooooooooooooooo='sudo pacman -Syu'
@@ -26,6 +26,7 @@ export PATH="$PATH:/home/matteo/applications"
 export PATH="$PATH:/home/matteo/scripts"
 export PATH="$PATH:/home/matteo/scripts/system"
 export PATH="$PATH:/home/matteo/.local/bin"
+export BROWSER="firefox"
 #PS1="[${BLUE6}\u${RESET}@${BLUE6}\h${RESET}]:${BLUE21}\w${RESET}${BLUE6}\$${RESET} "
 #poweline 
 if [ -f "/usr/share/powerline/bindings/bash/powerline.sh" ]; then

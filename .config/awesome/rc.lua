@@ -62,6 +62,7 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.tile,
     awful.layout.suit.floating,
     awful.layout.suit.tile.left,
@@ -70,7 +71,6 @@ awful.layout.layouts = {
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
@@ -232,9 +232,9 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,"Shift"           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,"Alt_L"      }, "Left",   awful.tag.viewprev,
+    awful.key({ modkey,"Mod1"      }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,"Alt_L"   }, "Right",  awful.tag.viewnext,
+    awful.key({ modkey,"Mod1"   }, "Right",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
@@ -275,9 +275,13 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "s", function () awful.spawn("firefox") end,
-              {description = "open firefox", group = "launcher"}),
-    awful.key({ modkey,           }, "d", function () awful.spawn("rofi -show drun") end,
+    awful.key({ modkey,           }, "s", function () awful.spawn("/home/matteo/scripts/rofi/quicksearch.sh no-theme") end,
+              {description = "quicksearch with firefox", group = "launcher"}),
+              awful.key({ modkey,           }, "c", function () awful.spawn("/home/matteo/scripts/rofi/launchprojects.sh code no-theme") end,
+              {description = "open folder with code", group = "launcher"}),
+              awful.key({ modkey,           }, "j", function () awful.spawn("/home/matteo/scripts/rofi/launchprojects.sh idea no-theme") end,
+              {description = "open folder with idea", group = "launcher"}),
+    awful.key({ modkey,           }, "d", function () awful.spawn("/home/matteo/scripts/rofi/launcher.sh snorlax-center") end,
               {description = "open rofi launcher", group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -330,7 +334,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "p", function () awful.spawn("/home/matteo/scripts/rofi/powermenu.sh no-theme") end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -472,6 +476,7 @@ awful.rules.rules = {
         class = {
           "Arandr",
           "Blueman-manager",
+          "Thunar",
           "Gpick",
           "Kruler",
           "MessageWin",  -- kalarm.
@@ -572,9 +577,9 @@ beautiful.useless_gap = 5
 autorun = true
 autorunApps =
 {
-   "dunst &",
-   "picom &",
-   "libinput-gestures-setup autostart start &",
+   "dunst",
+   "picom",
+   "libinput-gestures-setup autostart start",
 }
 if autorun then
    for app = 1, #autorunApps do

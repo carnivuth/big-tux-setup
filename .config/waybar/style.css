@@ -90,3 +90,7 @@ window#waybar {
   padding-right: 5px;
 
 }
+#workspaces{
+  background: #182d30;
+  color: #fdfdfd;
+}
