@@ -275,14 +275,19 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "s", function () awful.spawn("/home/matteo/scripts/rofi/quicksearch.sh no-theme") end,
+    awful.key({ modkey,           }, "s", function () awful.spawn("/home/matteo/scripts/rofi/quicksearch.sh snorlax-center") end,
               {description = "quicksearch with firefox", group = "launcher"}),
-              awful.key({ modkey,           }, "c", function () awful.spawn("/home/matteo/scripts/rofi/launchprojects.sh code no-theme") end,
+    awful.key({ modkey,           }, "c", function () awful.spawn("/home/matteo/scripts/rofi/launchprojects.sh code snorlax-center") end,
               {description = "open folder with code", group = "launcher"}),
-              awful.key({ modkey,           }, "j", function () awful.spawn("/home/matteo/scripts/rofi/launchprojects.sh idea no-theme") end,
+    awful.key({ modkey,           }, "j", function () awful.spawn("/home/matteo/scripts/rofi/launchprojects.sh idea snorlax-center") end,
               {description = "open folder with idea", group = "launcher"}),
     awful.key({ modkey,           }, "d", function () awful.spawn("/home/matteo/scripts/rofi/launcher.sh snorlax-center") end,
               {description = "open rofi launcher", group = "launcher"}),
+    awful.key({ modkey,           }, "o", function () awful.spawn("/home/matteo/scripts/rofi/quicklinks.sh snorlax-center") end,
+              {description = "quicklink menu", group = "launcher"}),
+    awful.key({ modkey,           }, "e", function () awful.spawn("/home/matteo/scripts/rofi/filebrowser.sh snorlax-center") end,
+              {description = "browse files with rofi", group = "launcher"}),
+    
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
@@ -334,7 +339,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function () awful.spawn("/home/matteo/scripts/rofi/powermenu.sh no-theme") end,
+    awful.key({ modkey }, "p", function () awful.spawn("/home/matteo/scripts/rofi/powermenu.sh snorlax-center") end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -351,8 +356,7 @@ clientkeys = gears.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
-              {description = "move to screen", group = "client"}),
+
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
     awful.key({ modkey,           }, "n",

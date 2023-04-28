@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run";
+	modi:                       "file-browser-extended";
     combi-modes:                "drun,run";
     show-icons:                 true;
     display-drun:               "Run apps";
