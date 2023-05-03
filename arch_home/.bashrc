@@ -9,10 +9,11 @@ BLUE6="\[$(tput setaf 6)\]"
 BLUE21="\[$(tput setaf 21)\]"
 RESET="\[$(tput sgr0)\]"
 
-alias ls='ls --color=auto -p'
+alias ls='ls --color=auto '
 alias ll='ls --color=auto -pl'
 alias la='ls --color=auto -pa'
 
+alias cbonsai='cbonsai -l'
 alias grep='grep --color=auto'
 alias lessssgoooooooooooooooooooooooo='sudo pacman -Syu'
 alias pacman='pacman --color=auto'

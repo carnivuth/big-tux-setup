@@ -457,6 +457,10 @@
 #
 # vim: ft=cfg
 # sound effect
+[updates]
+appname ="Updates"
+format = "%a\n<b>%s</b>\n%b"
+
 [play_sound]
     summary = "*"
     script = /home/matteo/scripts/system/notifications/alert.sh

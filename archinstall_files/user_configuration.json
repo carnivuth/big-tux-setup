@@ -26,6 +26,8 @@
 "alacritty",
 "arc-gtk-theme",
 "arc-icon-theme",
+"arduino",
+"arduino-cli",
 "autorandr",
 "awesome",
 "base",
@@ -49,7 +51,6 @@
 "gimp",
 "git",
 "gnome-keyring",
-"gnome-software",
 "gnome-themes-extra",
 "go",
 "gource",
@@ -74,6 +75,7 @@
 "linux",
 "linux-firmware",
 "linux-headers",
+"lollypop",
 "lxappearance",
 "man-db",
 "mesa-utils",
@@ -137,7 +139,8 @@
 "xorg-xev",
 "xorg-xinit",
 "xorg-xinput",
-"xss-lock"
+"xss-lock",
+"yt-dlp"
 ]
    ,
     "profile": {
