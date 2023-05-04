@@ -47,6 +47,7 @@ for_window [title="LXRAD Window"] floating enabled; position center
 for_window [class="Lxappearance"] floating enabled ; position center
 for_window [class="Lightdm-gtk-greeter-settings"] floating enabled; position center
 for_window [class="steam_app_*"] floating disabled; position center
+for_window [class="Telegram"] floating enabled; position center
 
 ######################################### WINDOW OPTION ##############################################
 
