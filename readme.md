@@ -14,3 +14,4 @@
 ### PREVIEW
   ![preview](images/2023-04-14_10-07.png)
 ##### check also my [vscode theme](https://github.com/carnivuth/snorlax-theme)
+##### [usefull scripts](https://github.com/carnivuth/scripts)
