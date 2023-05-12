@@ -38,16 +38,17 @@ font JetBrainsMonoNL Nerd Font:style=SemiBold,Regular
 for_window [class="^.*"] border pixel 0
 
 # set floating as default configuration for some programs
-for_window [class="Thunar"] floating enabled ; position center
-for_window [class="Blueman-manager"] floating enabled ; position center
-for_window [class="Pavucontrol"] floating enabled; position center
-for_window [title="Steam - News"] floating enabled; position center
-for_window [title="Save As"] floating enabled; position center
-for_window [title="LXRAD Window"] floating enabled; position center
-for_window [class="Lxappearance"] floating enabled ; position center
-for_window [class="Lightdm-gtk-greeter-settings"] floating enabled; position center
-for_window [class="steam_app_*"] floating disabled; position center
-for_window [class="Telegram"] floating enabled; position center
+for_window [class="Thunar"] floating enabled ; move position center
+for_window [class="Blueman-manager"] floating enabled ; move position center
+for_window [class="Pavucontrol"] floating enabled; move position center
+for_window [title="Steam - News"] floating enabled; move position center
+for_window [title="Save As"] floating enabled; move position center
+for_window [title="LXRAD Window"] floating enabled; move position center
+for_window [class="Lxappearance"] floating enabled ; move position center
+for_window [class="Lightdm-gtk-greeter-settings"] floating enabled; move position center
+for_window [class="steam_app_*"] floating disabled; 
+for_window [class="Telegram"] floating enabled; move position center
+#for_window [class="vlc"] floating enabled; move position center
 
 ######################################### WINDOW OPTION ##############################################
 
@@ -312,3 +313,10 @@ gaps inner $gaps_value
 for_window [class="Spotify"] move to workspace $ws10; workspace $ws10
 
 ######################################### SPOTIFY ##############################################
+
+######################################### STEAM GAMES ##############################################
+
+#lock steam games to workspace 9
+for_window [class="steam_app_*"] move to workspace $ws9; workspace $ws9
+
+######################################### STEAM GAMES ##############################################

@@ -21,7 +21,7 @@ alias pacman='pacman --color=auto'
 alias yay='yay --color=auto'
 ##pacman alias remove orphans
 alias autoremove="sudo pacman -Qtdq | sudo pacman -Rns -"
-export PATH="$PATH:/usr/lib/docker/cli-plugins"
+#export PATH="$PATH:/usr/lib/docker/cli-plugins"
 export PATH="$PATH:/home/matteo/.dotnet/tools"
 export PATH="$PATH:/home/matteo/applications"
 export PATH="$PATH:/home/matteo/scripts"
