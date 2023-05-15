@@ -48,6 +48,7 @@ for_window [class="Lxappearance"] floating enabled ; move position center
 for_window [class="Lightdm-gtk-greeter-settings"] floating enabled; move position center
 for_window [class="steam_app_*"] floating disabled; 
 for_window [class="Telegram"] floating enabled; move position center
+for_window [class="Conky"] floating enabled; move position center
 #for_window [class="vlc"] floating enabled; move position center
 
 ######################################### WINDOW OPTION ##############################################
@@ -282,8 +283,12 @@ bindsym $mod+b exec --no-startup-id $folder/system/bluetooth/bluetooth.sh --togg
 #launch blueman
 bindsym $mod+Shift+b exec --no-startup-id blueman-manager
 
+
 #launch pavucontrol
 bindsym $mod+Shift+m exec --no-startup-id pavucontrol
+
+#launch pavucontrol
+bindsym $mod+k exec --no-startup-id conky
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

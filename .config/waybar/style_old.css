@@ -1,0 +1,102 @@
+* {
+  font-size: 12px;
+  font-family:"Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular";
+  border-radius: 12px;
+ 
+
+}
+
+window#waybar {
+  background: #182d30;
+
+}
+
+#battery {
+  margin: 5px 0px 5px 0px;
+  background: #37a538;
+  padding: 5px;
+  color: #fdfdfd;
+}
+#tray{
+  background: #37a538;
+  padding: 5px;
+  margin: 5px 0px 5px 0px;
+
+
+}
+#custom-quit {
+  margin: 5px 3px 5px 0px;
+  padding: 5px 7px 5px 5px;
+  background: #37a538;
+  color: #FFF;
+}
+
+#clock {
+  margin: 5px 0px 5px 3px;
+  padding: 5px;
+  color: #FFF;
+  background: #37a538;
+  color: #fdfdfd;
+}
+
+#custom-keyboard {
+  background: #37a538;
+  color: #c5c8c6;
+  padding: 5px 5px 5px 7px;
+  margin: 5px 0px 5px 3px;
+}
+
+#custom-media {
+  margin: 5px 3px 5px 3px;
+  padding: 5px 7px 5px 7px;
+  border-radius: 10px;
+  background: #37a538;
+  color: #fdfdfd;
+}
+#pulseaudio {
+  margin: 5px 3px 5px 0px;
+  padding: 5px 7px 5px 5px;
+  background: #37a538;
+  color: #fdfdfd;
+}
+
+#network {
+  background: #37a538;
+  color: #fdfdfd;
+  margin: 5px 0px 5px 0px;
+  padding: 5px;
+}
+#taskbar{
+  background: #37a538;
+  color: #fdfdfd;
+
+}
+#keyboard-state{
+  background: #37a538;
+  color: #fdfdfd;
+  margin: 5px 3px 5px 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#temperature{
+  background: #37a538;
+  color: #fdfdfd;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 5px 3px 5px 0px;
+
+
+}
+#backlight{
+  background: #37a538;
+  color: #fdfdfd;
+  margin: 5px 3px 5px 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+#workspaces{
+  background: #37a538;
+  color: #fdfdfd;
+}

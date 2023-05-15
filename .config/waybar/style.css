@@ -1,96 +1,96 @@
 * {
-  font-size: 12px;
-  font-family: "JetBrains Mono,JetBrains Mono ExtraBold:style=Regular";
-  border-radius: 12px;
- 
+	font-size: 15px;
+	font-family: monospace;
 
 }
 
 window#waybar {
-  background: #182d30;
+	background: #182d30;
+	color: #fdf6e3;
 
 }
 
-#battery {
-  margin: 3px 0px 3px 0px;
-  background: #182d30;
-  padding: 5px;
-  color: #fdfdfd;
+
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: #1a1a1a;
+	background: #182d30;
+
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #182d30;
+	background: #1a1a1a;
 }
 
-#custom-quit {
-  margin: 3px 3px 3px 0px;
-  padding: 5px 7px 5px 5px;
-  background: #182d30;
-  color: #FFF;
-}
-
-#clock {
-  margin: 3px 0px 3px 3px;
-  padding: 5px;
-  color: #FFF;
-  background: #182d30;
-  color: #fdfdfd;
-}
-
-#custom-keyboard {
-  background: #182d30;
-  color: #c5c8c6;
-  padding: 5px 5px 5px 7px;
-  margin: 3px 0px 3px 3px;
-}
-
-#custom-media {
-  margin: 3px;
-  padding: 5px 7px 5px 7px;
-  border-radius: 10px;
-  background: #182d30;
-  color: #fdfdfd;
-}
-#pulseaudio {
-  margin: 3px 3px 3px 0px;
-  padding: 5px 7px 5px 5px;
-  background: #182d30;
-  color: #fdfdfd;
-}
-
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray,
+#temperature,
 #network {
-  background: #182d30;
-  color: #fdfdfd;
-  margin: 3px 0px 3px 0px;
-  padding: 5px;
-}
-#taskbar{
-  background: #182d30;
-  color: #fdfdfd;
-
-}
-#keyboard-state{
-  background: #182d30;
-  color: #fdfdfd;
-  margin: 3px 3px 3px 0px;
-  padding-left: 5px;
-  padding-right: 5px;
+	background: #1a1a1a;
 }
 
+#workspaces button {
+	padding: 0 2px;
+	color: #fdf6e3;
+}
+#workspaces button.focused {
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
+}
+
+#pulseaudio {
+	color: #268bd2;
+}
+#memory {
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #859900;
+}
+#disk {
+	color: #b58900;
+}
+#network{
+	color: #37a538;
+
+}
 #temperature{
-  background: #182d30;
-  color: #fdfdfd;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 3px 3px 3px 0px;
-
+	color: #37a538;
 
 }
-#backlight{
-  background: #182d30;
-  color: #fdfdfd;
-  margin: 3px 3px 3px 0px;
-  padding-left: 5px;
-  padding-right: 5px;
 
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#temperature,
+#disk {
+	padding: 0 10px;
 }
-#workspaces{
-  background: #182d30;
-  color: #fdfdfd;
+
+#network{
+	padding: 0 10px;
+
 }
