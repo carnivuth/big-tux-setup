@@ -35,7 +35,8 @@ window#waybar {
 #disk,
 #tray,
 #temperature,
-#network {
+#network,
+#bluetooth {
 	background: #1a1a1a;
 }
 
@@ -57,7 +58,7 @@ window#waybar {
 }
 
 #pulseaudio {
-	color: #268bd2;
+	color: #37a538;
 }
 #memory {
 	color: #2aa198;
@@ -69,14 +70,18 @@ window#waybar {
 	color: #859900;
 }
 #disk {
-	color: #b58900;
+	color: #efdfbd;
 }
 #network{
 	color: #37a538;
 
 }
-#temperature{
+#bluetooth{
 	color: #37a538;
+
+}
+#temperature{
+	color: #ab1718;
 
 }
 
@@ -90,7 +95,12 @@ window#waybar {
 	padding: 0 10px;
 }
 
-#network{
+#network,
+#bluetooth{
 	padding: 0 10px;
 
+}
+
+#clock{
+	color:#1394ef;
 }

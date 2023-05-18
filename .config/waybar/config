@@ -5,8 +5,19 @@
 	"position": "top",
 
 	"modules-left": [
+		"tray",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
 		"network",
-		"custom/right-arrow-dark"
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"bluetooth",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"pulseaudio",
+		"custom/right-arrow-dark",
+
+
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -20,15 +31,7 @@
 		"custom/right-arrow-dark"
 	],
 	"modules-right": [
-		"custom/left-arrow-dark",
-		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"cpu",
-		"custom/left-arrow-light",
+		
 		"custom/left-arrow-dark",
 		"battery",
 		"custom/left-arrow-light",
@@ -39,9 +42,7 @@
 		"disk#root",
 		"disk#home",
 		"disk#storage",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"tray"
+	
 	],
 
 	"custom/left-arrow-dark": {
@@ -86,7 +87,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
+        "on-click-right": "networkmanager_dmenu"
 
     },
 
@@ -119,7 +120,7 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon}  {capacity}%",
 		"format-icons": [
 			"",
 			"",
@@ -128,9 +129,13 @@
 			""
 		]
 	},
+	"custom/bluetooth":{
+        "exec": "/home/matteo/scripts/system/bluetooth/bluetooth.sh",
+        "on-click": "/home/matteo/scripts/system/bluetooth/bluetooth.sh --toggle"
+    },
 	"temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+         //"hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC} ",
