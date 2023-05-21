@@ -153,7 +153,11 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 #launch network manager
-bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+#bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+
+#launch network menu
+bindsym $mod+n exec --no-startup-id $folder/rofi/networkmenu/networkmenu.sh snorlax-line
+bindsym $mod+Shift+n exec --no-startup-id $folder/rofi/networkmenu/networkmenu.sh snorlax-center
 
 #screenshot 
 bindsym $mod+Print exec --no-startup-id flameshot screen
