@@ -185,6 +185,8 @@ bindsym $mod+Shift+e exec --no-startup-id $folder/rofi/filebrowser.sh  snorlax-c
 bindsym $mod+c exec --no-startup-id $folder/rofi/launchprojects.sh code
 #intellij idea
 bindsym $mod+j exec --no-startup-id $folder/rofi/launchprojects.sh idea
+#fleet
+bindsym $mod+i exec --no-startup-id $folder/rofi/launchprojects.sh fleet
 
 #toggle bluetooth
 bindsym $mod+b exec --no-startup-id $folder/system/bluetooth/bluetooth.sh --toggle
