@@ -134,14 +134,12 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
 
 #audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pamixer -t 
-bindsym $mod+m exec --no-startup-id pamixer -t 
+bindsym $mod+Shift+a exec --no-startup-id pamixer -t 
 
 #brightness controls
 bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl -d intel_backlight s 10%- 
@@ -157,7 +155,6 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 #launch network menu
 bindsym $mod+n exec --no-startup-id $folder/rofi/networkmenu/networkmenu.sh snorlax-line
-bindsym $mod+Shift+n exec --no-startup-id $folder/rofi/networkmenu/networkmenu.sh snorlax-center
 
 #screenshot 
 bindsym $mod+Print exec --no-startup-id flameshot screen
@@ -172,14 +169,14 @@ bindsym $mod+t exec --no-startup-id telegram-desktop
 bindsym $mod+p exec --no-startup-id $folder/rofi/powermenu.sh
 
 #launch shortcut
-bindsym $mod+o exec --no-startup-id $folder/rofi/quicklinks.sh
+#bindsym $mod+o exec --no-startup-id $folder/rofi/quicklinks.sh
 
 # launch browser
 bindsym $mod+s exec --no-startup-id $folder/rofi/quicksearch.sh
 
 # launch filemanager
-bindsym $mod+e exec --no-startup-id $folder/rofi/filebrowser.sh  snorlax-line
-bindsym $mod+Shift+e exec --no-startup-id $folder/rofi/filebrowser.sh  snorlax-center
+bindsym $mod+e exec --no-startup-id $folder/rofi/fileexplorer/fileexplorer.sh  snorlax-line
+bindsym $mod+Shift+e exec --no-startup-id $folder/rofi/fileexplorer/fileexplorer.sh  snorlax-center
 #launch project menu
 #code
 bindsym $mod+c exec --no-startup-id $folder/rofi/launchprojects.sh code
@@ -189,15 +186,17 @@ bindsym $mod+j exec --no-startup-id $folder/rofi/launchprojects.sh idea
 bindsym $mod+i exec --no-startup-id $folder/rofi/launchprojects.sh fleet
 
 #toggle bluetooth
-bindsym $mod+b exec --no-startup-id $folder/system/bluetooth/bluetooth.sh --toggle
+bindsym $mod+Shift+b exec --no-startup-id $folder/system/bluetooth/bluetooth.sh --toggle
 #launch blueman
-bindsym $mod+Shift+b exec --no-startup-id blueman-manager
+bindsym $mod+b exec --no-startup-id blueman-manager
 
+#launch music player
+bindsym $mod+m exec --no-startup-id $folder/rofi/musicplayer/musicplayer.sh snorlax-line
 
 #launch pavucontrol
-bindsym $mod+Shift+m exec --no-startup-id pavucontrol
+bindsym $mod+a exec --no-startup-id pavucontrol
 
-#launch pavucontrol
+#launch conky
 bindsym $mod+k exec --no-startup-id conky
 
 # reload the configuration file

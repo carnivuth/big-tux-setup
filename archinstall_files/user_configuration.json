@@ -24,7 +24,6 @@
     "offline": false,
 "packages":[
 "alacritty",
-"arduino",
 "arduino-cli",
 "autorandr",
 "awesome",
@@ -35,6 +34,7 @@
 "borg",
 "brightnessctl",
 "calc",
+"celluloid",
 "chromium",
 "composer",
 "conky",
@@ -47,13 +47,13 @@
 "dunst",
 "efibootmgr",
 "feh",
+"ffnvcodec-headers",
 "firefox",
 "flameshot",
 "flatpak",
 "fuse2",
 "gimp",
 "git",
-"gmtp",
 "gnome-keyring",
 "gnome-themes-extra",
 "go",
@@ -156,7 +156,8 @@
 "xorg-xinit",
 "xorg-xinput",
 "xss-lock",
-"yt-dlp"
+"yt-dlp",
+"zip"
 ]
    ,
     "profile": {

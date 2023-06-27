@@ -9,18 +9,10 @@ BLUE6="\[$(tput setaf 6)\]"
 BLUE21="\[$(tput setaf 21)\]"
 RESET="\[$(tput sgr0)\]"
 
-alias ls='ls --color=auto '
-alias ll='ls --color=auto -pl'
-alias la='ls --color=auto -pa'
+#import alias
+source "$HOME/.bash_alias"
 
-alias cbonsai='cbonsai -l'
-alias grep='grep --color=auto'
-alias lessssgoooooooooooooooooooooooo='sudo pacman -Syu'
-alias pacman='pacman --color=auto'
-#alias 'sudo pacman'='pacman --color=auto'
-alias yay='yay --color=auto'
-##pacman alias remove orphans
-alias autoremove="sudo pacman -Qtdq | sudo pacman -Rns -"
+
 #export PATH="$PATH:/usr/lib/docker/cli-plugins"
 export PATH="$PATH:/home/matteo/.dotnet/tools"
 export PATH="$PATH:/home/matteo/applications"

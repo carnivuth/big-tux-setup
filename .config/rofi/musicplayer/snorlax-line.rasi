@@ -9,11 +9,11 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run";
+	modi:                       "file-browser-extended";
     combi-modes:                "drun,run";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
+    display-drun:               "Run apps";
+    display-run:                "Run commands";
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
@@ -120,23 +120,22 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     7px  0px 0px 5px ;
+    padding:                     7px 0px 0px 7px ;
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @prompt;
 }
-
 textbox-prompt-colon {
     enabled:                     true;
     padding:                     7px 5px 10px 15px;
     expand:                      false;
-    str:                         "󰢩";
+    str:                         "󰲋";
     background-color:            inherit;
     text-color:                  @icons;
-    size:                        50px;
+    font-size:                   24px;
 }
 entry {
     enabled:                     true;
-    padding:                     7px 10px 10px 5px;
+    padding:                     7px 10px 10px 10px;
     expand:                      false;
     width:                       10%;
     background-color:            inherit;
@@ -252,6 +251,7 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
+    /*size:                        24px;*/
     cursor:                      inherit;
 }
 element-text {

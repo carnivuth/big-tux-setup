@@ -16,7 +16,7 @@ configuration {
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
-	drun-display-format:        "{name}";
+	drun-display-format:        "{icon} {name}";
 	window-format:              "{w} · {c} · {t}";
 }
 
