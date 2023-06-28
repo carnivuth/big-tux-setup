@@ -9,8 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run";
-    combi-modes:                "drun,run";
+	modi:                       "dmenu";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
