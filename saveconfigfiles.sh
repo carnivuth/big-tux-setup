@@ -3,6 +3,11 @@ cat configfiles |while read SOURCE DEST ; do
 echo "coping $SOURCE"
 cp -r "$SOURCE" "$DEST"
 done
+cat systemfiles |while read SOURCE DEST ; do
+echo "coping $SOURCE"
+cp -r "$SOURCE" "$DEST"
+done
+
 echo "update pkgs list"
 #remove old files
 rm archinstall_files/pacman_pkg.json
