@@ -1,1 +1,2 @@
 /etc/lightdm ./etc
+/etc/pacman.conf ./etc
