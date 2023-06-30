@@ -1,5 +1,0 @@
-#!/bin/bash
-
-xrandr | grep " connected" |cut -d ' ' -f 1| while read MONITOR ; do
-[[ $MONITOR != "eDP-1" ]] && echo "$MONITOR">> /home/matteo/monitor &&  xrandr  --auto --output "$MONITOR" --right-of eDP-1  --mode 1920x1080 --rate  144
-done
