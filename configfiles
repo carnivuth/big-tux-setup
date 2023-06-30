@@ -12,6 +12,7 @@
 /home/matteo/.config/picom .config/
 /home/matteo/.profile ./arch_home/
 /home/matteo/.bashrc ./arch_home/
+/home/matteo/.bash_aliases ./arch_home/
 /home/matteo/.config/gtk-3.0 .config/
 /home/matteo/.config/gtk-4.0 .config/
 /home/matteo/scripts/system ./arch_home/scripts/
