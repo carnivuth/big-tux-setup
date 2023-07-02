@@ -149,11 +149,5 @@
     "sys-encoding": "UTF-8",
     "sys-language": "it_IT",
     "timezone": "Europe/Rome",
-    "version": "2.5.1",
-    "custom-commands": [
-        "echo 'installing yay'",
-        "git clone https://aur.archlinux.org/yay.git",
-        "cd yay",
-        "makepkg -si"
-    ]
+    "version": "2.5.1"
 }
