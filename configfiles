@@ -10,6 +10,7 @@
 /home/matteo/.config/rofi .config/
 /home/matteo/.config/rofi .config/
 /home/matteo/.config/mimeapps.list .config/
+/home/matteo/.config/libinput-gestures.conf .config/
 /home/matteo/.config/waybar .config/
 /home/matteo/.config/hypr .config/
 /home/matteo/.config/awesome .config/
