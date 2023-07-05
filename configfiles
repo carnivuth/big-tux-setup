@@ -8,7 +8,8 @@
 /home/matteo/.config/polybar .config/
 /home/matteo/.config/powerline .config/
 /home/matteo/.config/rofi .config/
-/home/matteo/.config/wofi .config/
+/home/matteo/.config/rofi .config/
+/home/matteo/.config/mimeapps.list .config/
 /home/matteo/.config/waybar .config/
 /home/matteo/.config/hypr .config/
 /home/matteo/.config/awesome .config/

@@ -1,0 +1,19 @@
+[Default Applications]
+x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_usr_lib_eclipse_.desktop
+x-scheme-handler/eclipse+installer=_home_matteo_Downloads_eclipse-installer_.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-J8DZ71.desktop
+message/rfc822=userapp-Thunderbird-J8DZ71.desktop
+x-scheme-handler/mid=userapp-Thunderbird-J8DZ71.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-NKB071.desktop
+text/calendar=userapp-Thunderbird-NKB071.desktop
+application/x-extension-ics=userapp-Thunderbird-NKB071.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-NKB071.desktop
+inode/directory=Thunar.desktop
+application/pdf=firefox.desktop
+application/link=firefox.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-J8DZ71.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-J8DZ71.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-NKB071.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-NKB071.desktop;
