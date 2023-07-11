@@ -8,9 +8,15 @@ x-scheme-handler/webcal=userapp-Thunderbird-NKB071.desktop
 text/calendar=userapp-Thunderbird-NKB071.desktop
 application/x-extension-ics=userapp-Thunderbird-NKB071.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-NKB071.desktop
-inode/directory=Thunar.desktop
 application/pdf=firefox.desktop
 application/link=firefox.desktop
+inode/directory=thunar.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-J8DZ71.desktop;
