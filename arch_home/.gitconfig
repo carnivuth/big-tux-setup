@@ -1,0 +1,10 @@
+[credential]
+	helper = /usr/bin/git-credential-manager
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[user]
+	email = matti200042@gmail.com
+	name = carnivuth
+[init]
+	defaultBranch = main
