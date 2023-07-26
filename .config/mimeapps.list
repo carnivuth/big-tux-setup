@@ -17,6 +17,7 @@ x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/discord-694795560288256021=discord-694795560288256021.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-J8DZ71.desktop;

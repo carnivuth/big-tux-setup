@@ -11,7 +11,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id autorandr -c
 
 #start polybar
-exec_always --no-startup-id  .config/polybar/carnibar/launch.sh
+exec_always --no-startup-id  .config/polybar/modernbar/launch.sh
 
 #set background image
 exec_always --no-startup-id  "~/.fehbg"
