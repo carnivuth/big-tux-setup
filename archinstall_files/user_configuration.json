@@ -24,6 +24,7 @@
     "offline": false,
 "packages":[
 "alacritty",
+"archlinux-wallpaper",
 "autorandr",
 "base",
 "base-devel",
@@ -188,7 +189,6 @@
 "xorg-xwininfo",
 "xorg-xwud",
 "xss-lock",
-"xterm",
 "yt-dlp",
 "zip",
 "zram-generator"

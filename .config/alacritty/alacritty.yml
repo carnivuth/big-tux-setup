@@ -199,7 +199,7 @@
 # Colors (Tomorrow Night)
 colors:
   primary:
-    background: '#182d30'
+    #background: '#3a3c49'
     foreground: '#fdfdfd'
 
     # Bright and dim foreground colors
