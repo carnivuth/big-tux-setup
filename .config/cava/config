@@ -148,7 +148,7 @@
 # a terminal that can change color definitions such as Gnome-terminal or rxvt.
 # default is to keep current terminal color
 ; background = default
- foreground = '#223f43'
+ foreground = '#4e94e2'
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'

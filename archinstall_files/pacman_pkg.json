@@ -1,5 +1,6 @@
 "packages":[
 "alacritty",
+"android-file-transfer",
 "archlinux-wallpaper",
 "autorandr",
 "base",
@@ -87,7 +88,6 @@
 "playerctl",
 "polkit-gnome",
 "polybar",
-"powerline",
 "powerline-fonts",
 "psensor",
 "python-pip",
