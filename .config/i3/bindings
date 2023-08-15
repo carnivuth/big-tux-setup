@@ -189,6 +189,10 @@ bindsym $mod+Shift+j exec --no-startup-id $folder/rofi/launchprojects/launchproj
 bindsym $mod+i exec --no-startup-id $folder/rofi/launchprojects/launchprojects.sh fleet snorlax-line-bottom
 bindsym $mod+Shift+i exec --no-startup-id $folder/rofi/launchprojects/launchprojects.sh fleet snorlax-center
 
+#launch nds game launcher
+bindsym $mod+g exec --no-startup-id $folder/rofi/ndslauncher/ndslauncher.sh snorlax-line-bottom
+bindsym $mod+Shift+g exec --no-startup-id $folder/rofi/ndslauncher/ndslauncher.sh snorlax-center
+
 #toggle bluetooth
 bindsym $mod+Shift+b exec --no-startup-id $folder/system/bluetooth/bluetooth.sh --toggle
 #launch blueman
@@ -196,6 +200,7 @@ bindsym $mod+b exec --no-startup-id blueman-manager
 
 #launch music player
 bindsym $mod+m exec --no-startup-id $folder/rofi/musicplayer/musicplayer.sh snorlax-line-bottom
+bindsym $mod+Shift+m exec --no-startup-id $folder/rofi/musicplayer/musicplayer.sh snorlax-center
 
 #launch pavucontrol
 bindsym $mod+a exec --no-startup-id pavucontrol

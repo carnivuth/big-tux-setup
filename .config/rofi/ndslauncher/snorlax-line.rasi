@@ -12,8 +12,8 @@ configuration {
 	modi:                       "drun,run";
     combi-modes:                "drun,run";
     show-icons:                 true;
-    display-drun:               "Run apps";
-    display-run:                "Run commands";
+    display-drun:               "";
+    display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
@@ -54,11 +54,11 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    south;
-    anchor:                      south;
+    location:                    north;
+    anchor:                      north;
     fullscreen:                  false;
     width:                       100%;
-    height:                       3%;
+    height:                       3.9%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -66,10 +66,10 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    margin:                      0px 0px;
+    margin:                      5px 10px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               18px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -90,7 +90,7 @@ horibox {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
-    children:                    ["textbox-prompt-colon","prompt",  "entry", "listview"  ];
+    children:                    ["textbox-prompt-colon", "prompt",  "entry", "listview"  ];
 }
 
 /*****----- Main Box -----*****/
@@ -107,7 +107,6 @@ mainbox {
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     false;
-    /*spacing:                     10px;*/
     margin:                      0px;
     padding:                     7px;
     border:                      0px solid;
@@ -120,7 +119,7 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     7px 0px 0px 7px ;
+    padding:                     7px 0px 0px 5px;
     background-color:            inherit;
     text-color:                  @prompt;
 }
@@ -128,14 +127,14 @@ textbox-prompt-colon {
     enabled:                     true;
     padding:                     7px 5px 10px 15px;
     expand:                      false;
-    str:                         "󰲋";
+    str:                         "";
     background-color:            inherit;
     text-color:                  @icons;
     font-size:                   24px;
 }
 entry {
     enabled:                     true;
-    padding:                     7px 10px 10px 10px;
+    padding:                     7px 0px 10px 10px;
     expand:                      false;
     width:                       10%;
     background-color:            inherit;
@@ -251,7 +250,6 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    /*size:                        24px;*/
     cursor:                      inherit;
 }
 element-text {

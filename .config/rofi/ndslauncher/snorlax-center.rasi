@@ -12,8 +12,8 @@ configuration {
 	modi:                       "drun,run";
     combi-modes:                "drun,run";
     show-icons:                 true;
-    display-drun:               "Run apps";
-    display-run:                "Run commands";
+    display-drun:               "";
+    display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
@@ -54,22 +54,22 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    south;
-    anchor:                      south;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
-    width:                       100%;
-    height:                       3%;
+    width:                       40%;
+    height:                       50%;
     x-offset:                    0px;
     y-offset:                    0px;
 
-    children:                    [ horibox ];
+    children:                    [ mainbox ];
 
     /* properties for all widgets */
     enabled:                     true;
-    margin:                      0px 0px;
+    margin:                      5px 10px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
+    border:                      3px solid;
+    border-radius:               18px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -106,7 +106,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     false;
+    enabled:                     true;
     /*spacing:                     10px;*/
     margin:                      0px;
     padding:                     7px;
@@ -120,13 +120,13 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     7px 0px 0px 7px ;
+    padding:                     7px 5px 0px 7px ;
     background-color:            inherit;
     text-color:                  @prompt;
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     7px 5px 10px 15px;
+    padding:                     7px 7px 10px 15px;
     expand:                      false;
     str:                         "󰲋";
     background-color:            inherit;
@@ -172,12 +172,12 @@ case-indicator {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     2;
     lines:                       100;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
-    layout:                      horizontal;
+    layout:                      vertical;
     reverse:                     false;
     fixed-height:                false;
     fixed-columns:               false;
@@ -204,7 +204,7 @@ element {
     enabled:                     true;
     spacing:                     8px;
     margin:                      0px;
-    padding:                     2px 8px;
+    padding:                     6px 8px;
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @border-colour;
@@ -251,7 +251,7 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    /*size:                        24px;*/
+    size:                        32px;
     cursor:                      inherit;
 }
 element-text {
@@ -273,7 +273,7 @@ mode-switcher{
     border-radius:               4px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
-    text-color:                  @foreground-colour;
+    text-color:                  @mode-switcher-color;
 }
 button {
     padding:                     8px;
@@ -285,7 +285,7 @@ button {
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(normal-foreground);
+    background-color:            @mode-switcher-color;
     text-color:                  var(normal-background);
 }
 

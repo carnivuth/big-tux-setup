@@ -7,13 +7,13 @@
  **/
 
 * {
-    background:     #3a3c49FF;
-    background-alt: #3a3c49FF;
+    background:     #4e94e2FF;
+    background-alt: #4e94e2FF;
     foreground:     #fdfdfdFF;
-    selected:       #4e94e2FF;
-    active:         #4e94e2FF;
+    selected:       #3a3c49FF;
+    active:         #3a3c49FF;
     urgent:         #fce965FF;
-    icons:          #4e94e2FF;
-    prompt:          #4e94e2FF;
-    mode-switcher-color: #4e94e2FF;
+    icons:          #3a3c49FF;
+    prompt:          #3a3c49FF;
+    mode-switcher-color: #3a3c49FF;
 }
