@@ -24,3 +24,6 @@ PS1="{${BLUE6}\u@\h${RESET}:${BLUE21}\w${RESET}}"
 #	POWERLINE_BASH_SELECT=1
 #	source "/usr/share/powerline/bindings/bash/powerline.sh"
 #fi
+if [[ "$TERM" == alacritty ]];then
+	wal -e -n -t  -q -i /usr/share/backgrounds/archlinux/awesome.png 
+fi

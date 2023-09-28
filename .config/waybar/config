@@ -1,8 +1,8 @@
 // -*- mode: json -*-
 
 {
-	"layer": "top",
-	"position": "top",
+	"layer": "bottom",
+	"position": "bottom",
 	"margin-top": 5,
     "margin-bottom": 0,
     "margin-left": 5,
